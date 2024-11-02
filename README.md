@@ -2,6 +2,9 @@
 
 ### By Furstin Aprilavia Putri 5025221234
 
+Proyek ini dapat diakses secara online melalui GitHub Pages
+**https://furstinvia.github.io/Grafkom-WebGL-Plate/**
+
 ## Deskripsi
 Proyek ini dibuat sebagai bagian dari tugas pada kelas Grafika Komputer D. Dalam proyek ini, sebuah objek 3D berbentuk piring dibuat dan dirender menggunakan Three.js dengan memanfaatkan WebGL. Piring ini pertama kali dibuat di Blender, lalu diimpor ke WebGL dan ditampilkan di halaman web dengan pencahayaan serta bayangan realistis.
 
