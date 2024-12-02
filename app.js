@@ -140,6 +140,25 @@ animFolder.add(animParams, 'autoRotate').onChange((value) => {
 animFolder.add(animParams, 'rotationSpeed', 0, 0.1);
 animFolder.open();
 
+// **Dynamic Scaling Controls**
+const scaleFolder = gui.addFolder('Scaling');
+const scaleParams = {
+    scaleX: 5,
+    scaleY: 5,
+    scaleZ: 5,
+};
+scaleFolder.add(scaleParams, 'scaleX', 0.1, 10).onChange((value) => {
+    if (model) model.scale.x = value;
+});
+scaleFolder.add(scaleParams, 'scaleY', 0.1, 10).onChange((value) => {
+    if (model) model.scale.y = value;
+});
+scaleFolder.add(scaleParams, 'scaleZ', 0.1, 10).onChange((value) => {
+    if (model) model.scale.z = value;
+});
+scaleFolder.open();
+
+
 // Update model animation
 function animate() {
     requestAnimationFrame(animate);
@@ -153,3 +172,4 @@ function animate() {
     renderer.render(scene, camera);
 }
 animate();
+
