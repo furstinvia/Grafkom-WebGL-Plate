@@ -95,3 +95,61 @@ window.addEventListener('resize', function() {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
 });
+
+// Tambahkan dat.GUI
+const gui = new dat.GUI();
+
+// Background Color
+const bgFolder = gui.addFolder('Background');
+const bgParams = {
+    color: '#000000' // Default color
+};
+bgFolder.addColor(bgParams, 'color').onChange((value) => {
+    scene.background = new THREE.Color(value);
+});
+bgFolder.open();
+
+// Lighting Controls
+const lightingFolder = gui.addFolder('Lighting');
+const lightParams = {
+    ambientIntensity: ambientLight.intensity,
+    directionalIntensity: sunLight.intensity,
+    enableShadows: true
+};
+lightingFolder.add(lightParams, 'ambientIntensity', 0, 2).onChange((value) => {
+    ambientLight.intensity = value;
+});
+lightingFolder.add(lightParams, 'directionalIntensity', 0, 2).onChange((value) => {
+    sunLight.intensity = value;
+});
+lightingFolder.add(lightParams, 'enableShadows').onChange((value) => {
+    sunLight.castShadow = value;
+});
+lightingFolder.open();
+
+// Animation Controls
+const animFolder = gui.addFolder('Animation');
+const animParams = {
+    autoRotate: false,
+    rotationSpeed: 0.01
+};
+animFolder.add(animParams, 'autoRotate').onChange((value) => {
+    if (!model) return;
+    animParams.autoRotate = value;
+});
+animFolder.add(animParams, 'rotationSpeed', 0, 0.1);
+animFolder.open();
+
+// Update model animation
+function animate() {
+    requestAnimationFrame(animate);
+
+    // Rotate the model if autoRotate is enabled
+    if (model && animParams.autoRotate) {
+        model.rotation.y += animParams.rotationSpeed;
+    }
+
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();
