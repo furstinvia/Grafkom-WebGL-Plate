@@ -6,10 +6,11 @@ Proyek ini dapat diakses secara online melalui GitHub Pages
 **https://furstinvia.github.io/Grafkom-WebGL-Plate/**
 
 ## Deskripsi
-Proyek ini dibuat sebagai bagian dari tugas pada kelas Grafika Komputer D. Dalam proyek ini, sebuah objek 3D berbentuk piring dibuat dan dirender menggunakan Three.js dengan memanfaatkan WebGL. Piring ini pertama kali dibuat di Blender, lalu diimpor ke WebGL dan ditampilkan di halaman web dengan pencahayaan serta bayangan realistis.
+Proyek ini dibuat sebagai bagian dari tugas pada kelas Grafika Komputer D. Dalam proyek ini, sebuah objek 3D berbentuk piring dan pizza sebagai topping dibuat dan dirender menggunakan Three.js dengan memanfaatkan WebGL. Piring ini pertama kali dibuat di Blender, lalu diimpor ke WebGL dan ditampilkan di halaman web dengan pencahayaan serta bayangan realistis.
 
 ## Fitur
 - **Model 3D Piring**: Dibuat menggunakan Blender dan diekspor dalam format `.glb`.
+- **Model 3D Pizza sebagai Topping**: Selain piring, model pizza 3D juga ditambahkan sebagai topping di atas piring. Pizza dibuat menggunakan Blender dengan material yang realistis dan diimpor ke dalam browser menggunakan Three.js
 - **Rendering dengan Three.js**: Objek diimpor dan dirender dalam browser menggunakan Three.js, sebuah library JavaScript yang berbasis WebGL.
 - **Efek Pencahayaan dan Pembayangan**: Pencahayaan realistis menggunakan ambient light dan directional light.
 - **Material dan Tekstur**: Piring diberi material dan warna yang sesuai agar tampak realistis.
@@ -28,12 +29,17 @@ Gambar hasil modeling piring di Blender:
 
 ![image](https://github.com/user-attachments/assets/1de24199-1f7d-4b1b-a014-a27d1b9d4931)
 
+Gambar hasil modeling pizza di Blender:
+
+![image](https://github.com/user-attachments/assets/8d3d39bc-0397-441d-ab67-c63fea27297f)
+
 ### 2. Model di WebGL
-Gambar model piring setelah diimpor dan dirender menggunakan WebGL (Three.js):
+Gambar model piring dan pizza setelah diimpor dan dirender menggunakan WebGL (Three.js):
 
-![image](https://github.com/user-attachments/assets/db8b1a32-3ac1-4dbf-a580-72f794e150cd)
+![image](https://github.com/user-attachments/assets/0adffce3-1c2e-421d-8d4c-189131ca124b)
 
-![image](https://github.com/user-attachments/assets/389fd8b5-d9dd-44b4-90c0-55d88c523093)
+![image](https://github.com/user-attachments/assets/d3eee6ca-2788-4599-abe9-b9bd79d8e8fc)
+
 
 ## Cara Menjalankan
 1. Clone repository ini:
