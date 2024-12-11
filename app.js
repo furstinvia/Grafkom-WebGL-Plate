@@ -41,8 +41,16 @@ scene.add(reflector);
 
 let model;
 
-// Load 3D model with improved material settings for realism
+// Initialize DRACOLoader
+const dracoLoader = new THREE.DRACOLoader();
+dracoLoader.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/libs/draco/'); // Path to DRACO decoder
+
+// Initialize GLTFLoader with DRACOLoader
 const loader = new THREE.GLTFLoader();
+loader.setDRACOLoader(dracoLoader);
+
+// Load 3D model with improved material settings for realism
+
 loader.load('piring.glb', function(gltf) {
     model = gltf.scene;
     model.position.set(0, 0, 0);
@@ -64,6 +72,28 @@ loader.load('piring.glb', function(gltf) {
 }, undefined, function(error) {
     console.error('Error loading GLB model:', error);
 });
+
+
+// Load the pizza model and place it on the plate
+// Load the pizza model and place it on the plate
+loader.load('pizzatopping.glb', function(gltf) {
+    const pizza = gltf.scene;
+    pizza.position.set(0, 1.6, 0); // Naikkan posisi Y lebih tinggi
+    pizza.scale.set(0.4, 0.4, 0.4); // Ukuran pizza tetap kecil
+
+    pizza.traverse((node) => {
+        if (node.isMesh) {
+            node.castShadow = true;
+            node.receiveShadow = true;
+        }
+    });
+
+    scene.add(pizza); // Tambahkan pizza ke scene
+}, undefined, function(error) {
+    console.error('Error loading pizza model:', error);
+});
+
+
 
 // Set camera position and controls
 camera.position.set(3, 5, 10);
