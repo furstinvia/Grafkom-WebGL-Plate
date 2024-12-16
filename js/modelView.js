@@ -1,9 +1,5 @@
 // modelView.js
-import * as glm from '../node_modules/gl-matrix/esm/index.js';
 import { zoomLevel, rotationX, rotationY, autoRotate, autoRotateSpeed } from './cameraControls.js';
-
-const { mat4 } = glm;
-
 
 export function updateModelViewMatrix() {
   const modelViewMatrix = mat4.create();
