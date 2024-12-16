@@ -1,0 +1,44 @@
+* {
+  overflow: hidden;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('bg3.png'); /* Gambar latar belakang */
+  background-size: cover; /* Menyesuaikan gambar dengan layar */
+  background-repeat: no-repeat; /* Hindari pengulangan gambar */
+  background-position: center; /* Posisikan gambar di tengah */
+}
+
+#webglCanvas {
+  display: block; /* Menghilangkan margin default canvas */
+  width: 100vw; /* Lebar penuh layar */
+  height: 100vh; /* Tinggi penuh layar */
+}
+
+
+.info {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  color: #f0e5d8;
+  background: linear-gradient(135deg, #3a2b2b, #4e3c3c, #2e2e2e, #1c1c1c);
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -3px); }
+  50% { transform: translate(-50%, 3px); }
+}
