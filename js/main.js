@@ -67,7 +67,7 @@ function createBuffers(gl, obj) {
 
 // Now define the main function after createShaderProgram
 async function main() {
-  const obj = await loadOBJ("../piring.obj", "../piring.mtl");
+  const obj = await loadOBJ("models/piring.obj", "models/piring.mtl");
   const program = createShaderProgram(gl, vertexShaderSource, fragmentShaderSource);
   gl.useProgram(program);
 
